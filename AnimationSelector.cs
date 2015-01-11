@@ -53,18 +53,14 @@ public class AnimationSelector : MonoBehaviour {
 		{
 			idleTimer = 0f;
 		}
-		
-		
 	}
 	
 	void UpdateAnimation()
 	{
-				
 		switch(curState.direction)
 		{
 #region direction none
-		case Controller.Direction.None:
-			
+		case Controller.Direction.None:			
 			if(curState.stance == Controller.Stance.Stand)
 			{
 				if(curState.isAiming && !curState.isFiring)
@@ -105,11 +101,9 @@ public class AnimationSelector : MonoBehaviour {
 			break;
 #endregion
 #region direction left			
-		case Controller.Direction.Left:
-			
+		case Controller.Direction.Left:			
 			if(curState.moveSpeed == Controller.MoveSpeed.Walk)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -150,8 +144,7 @@ public class AnimationSelector : MonoBehaviour {
 			}
 			
 			if(curState.moveSpeed == Controller.MoveSpeed.Run)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -169,8 +162,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation.CrossFade("StrafeRunLeft",fadeLength);
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -195,8 +187,7 @@ public class AnimationSelector : MonoBehaviour {
 #region direction front left
 		case Controller.Direction.Front_Left:
 			if(curState.moveSpeed == Controller.MoveSpeed.Walk)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -204,8 +195,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkLeftAim"].normalizedTime = 0.5f;
 						animation["WalkAim"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkLeftAim",fadeLength);
-						animation.Blend("WalkAim");
-						
+						animation.Blend("WalkAim");						
 						break;
 					}
 					else if ( curState.isFiring)
@@ -213,8 +203,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkLeftFire"].normalizedTime = 0.5f;
 						animation["WalkFire"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkLeftFire",fadeLength);
-						animation.Blend("WalkFire");
-					
+						animation.Blend("WalkFire");					
 						break;
 					}
 					else
@@ -222,12 +211,10 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkLeft"].normalizedTime = 0.5f;
 						animation["Walk"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkLeft",fadeLength);
-						animation.Blend("Walk");
-						
+						animation.Blend("Walk");						
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -257,8 +244,7 @@ public class AnimationSelector : MonoBehaviour {
 			}
 			
 			if(curState.moveSpeed == Controller.MoveSpeed.Run)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -285,8 +271,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation.Blend("Run");
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -320,8 +305,7 @@ public class AnimationSelector : MonoBehaviour {
 #region direction front
 		case Controller.Direction.Front:
 			if(curState.moveSpeed == Controller.MoveSpeed.Walk)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -362,8 +346,7 @@ public class AnimationSelector : MonoBehaviour {
 			}
 			
 			if(curState.moveSpeed == Controller.MoveSpeed.Run)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -407,8 +390,7 @@ public class AnimationSelector : MonoBehaviour {
 #region front right			
 		case Controller.Direction.Front_Right:
 			if(curState.moveSpeed == Controller.MoveSpeed.Walk)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -416,8 +398,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkRightAim"].normalizedTime = 0.0f;
 						animation["WalkAim"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkRightAim",fadeLength);
-						animation.Blend("WalkAim");
-						
+						animation.Blend("WalkAim");						
 						break;
 					}
 					else if ( curState.isFiring)
@@ -425,8 +406,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkRightFire"].normalizedTime = 0.0f;
 						animation["WalkFire"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkRightFire",fadeLength);
-						animation.Blend("WalkFire");
-					
+						animation.Blend("WalkFire");					
 						break;
 					}
 					else
@@ -434,12 +414,10 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkRight"].normalizedTime = 0.0f;
 						animation["Walk"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkRight",fadeLength);
-						animation.Blend("Walk");
-						
+						animation.Blend("Walk");						
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -466,11 +444,9 @@ public class AnimationSelector : MonoBehaviour {
 						break;
 					}
 				}
-			}
-			
+			}			
 			if(curState.moveSpeed == Controller.MoveSpeed.Run)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -530,11 +506,9 @@ public class AnimationSelector : MonoBehaviour {
 			break;
 #endregion
 #region direction right
-		case Controller.Direction.Right:
-			
+		case Controller.Direction.Right:			
 			if(curState.moveSpeed == Controller.MoveSpeed.Walk)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -552,8 +526,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation.CrossFade("StrafeWalkRight",fadeLength);
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -572,11 +545,9 @@ public class AnimationSelector : MonoBehaviour {
 						break;
 					}
 				}
-			}
-			
+			}			
 			if(curState.moveSpeed == Controller.MoveSpeed.Run)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -594,8 +565,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation.CrossFade("StrafeRunRight",fadeLength);
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -628,8 +598,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkRightAim"].normalizedTime = 0.0f;
 						animation["WalkBackwardsAim"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkRightAim",fadeLength);
-						animation.Blend("WalkBackwardsAim");
-						
+						animation.Blend("WalkBackwardsAim");						
 						break;
 					}
 					else if ( curState.isFiring)
@@ -637,8 +606,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkRightFire"].normalizedTime = 0.0f;
 						animation["WalkBackwardsFire"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkRightFire",fadeLength);
-						animation.Blend("WalkBackwardsFire");
-					
+						animation.Blend("WalkBackwardsFire");					
 						break;
 					}
 					else
@@ -646,12 +614,10 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkRight"].normalizedTime = 0.0f;
 						animation["WalkBackwards"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkRight",fadeLength);
-						animation.Blend("WalkBackwards");
-						
+						animation.Blend("WalkBackwards");						
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -678,11 +644,9 @@ public class AnimationSelector : MonoBehaviour {
 						break;
 					}
 				}
-			}
-			
+			}			
 			if(curState.moveSpeed == Controller.MoveSpeed.Run)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -709,8 +673,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation.Blend("RunBackwards");
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -744,8 +707,7 @@ public class AnimationSelector : MonoBehaviour {
 #region direction back
 		case Controller.Direction.Back:
 			if(curState.moveSpeed == Controller.MoveSpeed.Walk)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -763,8 +725,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation.CrossFade("WalkBackwards",fadeLength);
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -783,11 +744,9 @@ public class AnimationSelector : MonoBehaviour {
 						break;
 					}
 				}
-			}
-			
+			}			
 			if(curState.moveSpeed == Controller.MoveSpeed.Run)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -805,8 +764,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation.CrossFade("RunBackwards",fadeLength);
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -848,8 +806,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkLeftFire"].normalizedTime = 0.5f;
 						animation["WalkBackwardsFire"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkLeftFire",fadeLength);
-						animation.Blend("WalkBackwardsFire");
-					
+						animation.Blend("WalkBackwardsFire");					
 						break;
 					}
 					else
@@ -857,12 +814,10 @@ public class AnimationSelector : MonoBehaviour {
 						animation["StrafeWalkLeft"].normalizedTime = 0.5f;
 						animation["WalkBackwards"].normalizedTime = 0.0f;
 						animation.CrossFade("StrafeWalkLeft",fadeLength);
-						animation.Blend("WalkBackwards");
-						
+						animation.Blend("WalkBackwards");						
 						break;
 					}
-				}
-				
+				}			
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -889,11 +844,9 @@ public class AnimationSelector : MonoBehaviour {
 						break;
 					}
 				}
-			}
-			
+			}			
 			if(curState.moveSpeed == Controller.MoveSpeed.Run)
-			{
-			
+			{			
 				if(curState.stance == Controller.Stance.Stand)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -920,8 +873,7 @@ public class AnimationSelector : MonoBehaviour {
 						animation.Blend("RunBackwards");
 						break;
 					}
-				}
-				
+				}				
 				if(curState.stance == Controller.Stance.Crouch)
 				{
 					if(curState.isAiming && !curState.isFiring)
@@ -955,5 +907,4 @@ public class AnimationSelector : MonoBehaviour {
 #endregion
 		//animation.SyncLayer(0);		
 	}
-	
 }
